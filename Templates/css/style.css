@@ -1,0 +1,29 @@
+/* Set body background color */
+body {
+  background: lightcyan;
+  }
+
+.jumbotron {
+  background-color: skyblue;
+}
+
+/* style submit button */
+.button {
+border-radius: 12px;
+background-color:#555555;
+color:white;
+}
+
+input[type=text]{
+box-sizing: border-box;
+border-radius: 4px;
+border: 1px solid #ccc;
+word-wrap: break-word;
+}
+
+/* Change input box size and border color when clicked on */
+input[type=text]:focus {
+border: 2px solid lightsteelblue;
+height: 100px;
+width: 400px;
+}

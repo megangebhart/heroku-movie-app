@@ -1,1 +1,2 @@
-# heroku-movie-app
+# Project_3_Movies_Dataset
+IMDB reviews exploration

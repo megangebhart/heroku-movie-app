@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!-- <script type="text/python">
+        
+      
+    </script> -->
+    <style>
+        /* Set body background color */
+        body {
+            background: lightcyan;
+            font-family: "Raleway", sans-serif;
+        }
+
+        /* Set jumbotron background color */
+        .jumbotron {
+            background-color: skyblue;
+            text-align: center;
+        }
+
+        /* style submit button */
+        .button {
+            border-radius: 12px;
+            background-color:#555555;
+            color:white;
+            border: none;
+        }
+
+        label, center {
+            font-size: 16px;
+        }
+
+        /* Style input box */
+        input[type=text]{
+            box-sizing: border-box;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            color: gray;
+        }
+
+        /* Change input box size and border color when clicked on */
+        input[type=text]:focus {
+            border: 2px solid lightsteelblue;
+            height: 100px;
+            width: 400px;
+            color: black;
+        }
+
+        .result {
+            font-size: 80px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1><strong>Do you like the movie?</strong></h1>
+            <h3>Everybody has a favorite movie line, even movie moguls. We would love to have your review for the next
+                movie, so go ahead and write what you think!</h3>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-md-4">
+                    <center>
+                        <img src="https://raw.githubusercontent.com/mariasierralizarazo/Project_3_Movies_Dataset/master/Figures/Movie.jpg" alt="The Lion King" width="300" height="400"></img>
+                    </center>
+                </div>
+                <div class="col-md-8">
+                    <center>
+                        <strong>The Lion King - </strong>
+                        After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning
+                        of
+                        responsibility and bravery.
+                        <br><br>
+                        Director: Jon Favreau <br><br>
+                        Stars: Donald Glover, Beyoncé, Seth Rogen.
+                        <br>
+                        <center>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <form>
+                                        <br>
+                                        <input type="radio" class="like" name="opp" value="like">
+                                        <label for="like">YES, I liked the movie!</label><br>
+                                        <input type="radio" class="dislike" name="opp" value="dislike">
+                                        <label for="dislike">NO, I did not like it</label></br>
+                                        <input type="radio" class="other" name="opp" value="other">
+                                        <label for="other">It was just a movie</label>
+                                    </form>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h1 class="result">{{res}}/h2>
+                                </div>
+                            </div>
+                        </center>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <center>
+                                    <form action="#" method="POST">
+                                        <label for="feedback">Write your review here:</label><br>
+                                        <input type="text" name ="feedback" value="I enjoyed it!">
+                                        <br><br>
+                                        <input class="button" type="submit" value="submit">
+                                    </form>
+                                </center>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="row">
+                <div class="col-md-4">
+                    <center>
+                        <img src="https://raw.githubusercontent.com/mariasierralizarazo/Project_3_Movies_Dataset/master/Figures/Avengers_Infinity_War.PNG" alt="Avengers: Infinity War" width="300" height="400"></img>
+                    </center>
+                </div>
+                <div class="col-md-8">
+                    <center>
+                        <strong>Avengers: Infinity War - </strong>
+                        The Avengers and their allies must be willing to sacrifice all in an attempt to defeat 
+                        the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.
+                        <br><br>
+                        Directors: Anthony Russo, Joe Russo <br><br>
+                        Stars: Robert Downey, Jr., Chris Hemsworth, Mark Ruffalo.
+                        <br>
+                        <center>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <form>
+                                        <br>
+                                        <input type="radio" class="like" name="opp" value="like">
+                                        <label for="like">YES, I liked the movie!</label><br>
+                                        <input type="radio" class="dislike" name="opp" value="dislike">
+                                        <label for="dislike">NO, I did not like it</label></br>
+                                        <input type="radio" class="other" name="opp" value="other">
+                                        <label for="other">It was just a movie</label>
+                                    </form>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h1 class="result">0</h2>
+                                </div>
+                            </div>
+                        </center>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <center>
+                                    <form >
+                                        <label for="feedback">Write your review here:</label><br>
+                                        <input type="text" class="feedback" value="I enjoyed it!">
+                                        <br><br>
+                                        <input class="button" type="submit" value="submit">
+                                    </form>
+                                </center>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-md-4">
+                    <center>
+                        <img src="https://raw.githubusercontent.com/mariasierralizarazo/Project_3_Movies_Dataset/master/Figures/Seven_Pounds.PNG" alt="Seven Pounds" width="300" height="400"></img>
+                    </center>
+                </div>
+                <div class="col-md-8">
+                    <center>
+                        <strong>Seven Pounds - </strong>
+                        A man with a fateful secret embarks on an extraordinary journey of redemption by forever changing the 
+                        lives of seven strangers.
+                        <br><br>
+                        Director: Gabriele Mucino <br><br>
+                        Stars: Will Smith, Rosario Dawson, Woody Harrelson.
+                        <br>
+                        <center>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <form>
+                                        <br>
+                                        <input type="radio" class="like" name="opp" value="like">
+                                        <label for="like">YES, I liked the movie!</label><br>
+                                        <input type="radio" class="dislike" name="opp" value="dislike">
+                                        <label for="dislike">NO, I did not like it</label></br>
+                                        <input type="radio" class="other" name="opp" value="other">
+                                        <label for="other">It was just a movie</label>
+                                    </form>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h1 class="result">0</h2>
+                                </div>
+                            </div>
+                        </center>
+                        <br><br>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <center>
+                                    <form>
+                                        <label for="feedback">Write your review here:</label><br>
+                                        <input type="text" class="feedback" value="I enjoyed it!">
+                                        <br><br>
+                                        <input class="button" type="submit" value="submit">
+                                    </form>
+                                </center>
+                            </div>
+                        </div>
+                    </center>
+                </div>    
+            </div>
+            <br><br><br>
+        </div>
+    </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!-- <script src="js/app.js"></script> -->
+
+</body>
+
+</html>
